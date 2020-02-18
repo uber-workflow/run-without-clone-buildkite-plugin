@@ -1,0 +1,3 @@
+name: Skip clone
+description: Skips git clone before running command
+author: https://github.com/uber-workflow
