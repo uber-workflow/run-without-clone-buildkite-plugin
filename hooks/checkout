@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "Cloning specific repo and ref"
+
+GIT_REF="master"
+
+if [[ -d ".git" ]]; then
+  if git remote get-url origin; then
+    git remote set-url origin "$BUILDKITE_REPO"
+  else
+    git remote add origin "$BUILDKITE_REPO"
+  fi;
+else
+  git clone "$BUILDKITE_REPO" .
+fi;
+
+git clean -ffxdq
+
+git fetch -v --prune origin "$GIT_REF"
+git checkout -f FETCH_HEAD
+
+git clean -ffxdq
