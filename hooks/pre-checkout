@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "[Run Without Clone Plugin] - Overriding env"
+
+export BUILDKITE_COMMIT="HEAD"
+export BUILDKITE_BRANCH="master"

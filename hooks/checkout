@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo "[Run Without Clone Plugin] - Skipping git checkout"
