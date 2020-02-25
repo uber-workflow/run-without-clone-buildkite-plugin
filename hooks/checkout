@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "Cloning specific repo and ref"
+echo "Cloning specific branch"
 
-GIT_REF="master"
+GIT_BRANCH="master"
 
 if [[ -d ".git" ]]; then
   if git remote get-url origin; then
@@ -16,7 +16,7 @@ fi;
 
 git clean -ffxdq
 
-git fetch -v --prune origin "$GIT_REF"
+git fetch -v --prune origin "$GIT_BRANCH"
 git checkout -f FETCH_HEAD
 
 git clean -ffxdq
