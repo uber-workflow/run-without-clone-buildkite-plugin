@@ -2,7 +2,7 @@
 
 echo "Cloning specific branch"
 
-GIT_BRANCH="master"
+GIT_BRANCH=${BUILDKITE_PLUGIN_SKIP_CLONE_BRANCH:-master}
 
 if [[ -d ".git" ]]; then
   if git remote get-url origin; then
