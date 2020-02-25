@@ -5,3 +5,5 @@ configuration:
   properties:
     branch:
       type: string
+  required:
+    - branch
