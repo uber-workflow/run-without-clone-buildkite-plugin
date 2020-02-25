@@ -2,21 +2,23 @@
 
 echo "Cloning specific branch"
 
-GIT_BRANCH=${BUILDKITE_PLUGIN_ASDF_BRANCH:-master}
+printenv | grep buildkite
 
-if [[ -d ".git" ]]; then
-  if git remote get-url origin; then
-    git remote set-url origin "$BUILDKITE_REPO"
-  else
-    git remote add origin "$BUILDKITE_REPO"
-  fi;
-else
-  git clone "$BUILDKITE_REPO" .
-fi;
-
-git clean -ffxdq
-
-git fetch -v --prune origin "$GIT_BRANCH"
-git checkout -f FETCH_HEAD
-
-git clean -ffxdq
+# GIT_BRANCH=${BUILDKITE_PLUGIN_ASDF_BRANCH:-test}
+#
+# if [[ -d ".git" ]]; then
+#   if git remote get-url origin; then
+#     git remote set-url origin "$BUILDKITE_REPO"
+#   else
+#     git remote add origin "$BUILDKITE_REPO"
+#   fi;
+# else
+#   git clone "$BUILDKITE_REPO" .
+# fi;
+#
+# git clean -ffxdq
+#
+# git fetch -v --prune origin "$GIT_BRANCH"
+# git checkout -f FETCH_HEAD
+#
+# git clean -ffxdq
