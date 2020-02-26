@@ -3,7 +3,22 @@ description: Skips git clone before running command
 author: https://github.com/uber-workflow
 configuration:
   properties:
-    branch:
+    compose-file:
       type: string
+    image:
+      type: string
+    package:
+      type: string
+    service:
+      type: string
+    build:
+      type: string
+    verbose:
+      type: boolean
+    logs:
+      type: boolean
   required:
-    - branch
+    - image
+    - package
+    - service
+    - compose-file
