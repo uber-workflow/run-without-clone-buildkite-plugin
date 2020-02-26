@@ -4,7 +4,7 @@ echo "Cloning specific branch"
 
 echo "HI $BUILDKITE_PLUGIN_ASDF_BRANCH"
 
-printenv | grep branch
+printenv | grep buildkite
 
 # GIT_BRANCH=${BUILDKITE_PLUGIN_ASDF_BRANCH:-test}
 #
