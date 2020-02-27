@@ -1,5 +1,5 @@
-name: Foobar
-description: Foobar
+name: Run without clone
+description: run-without-clone
 author: https://github.com/uber-workflow
 configuration:
   properties:

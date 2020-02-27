@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "--- Running ${BUILDKITE_COMMAND} in ${BUILDKITE_PLUGIN_FOOBAR_THING}"
+echo "--- Running ${BUILDKITE_COMMAND} in ${BUILDKITE_PLUGIN_RUN_WITHOUT_CLONE_THING}"
 
 # GIT_BRANCH="master"
 #
