@@ -1,24 +1,7 @@
-name: asdf
-description: Skips git clone before running command
+name: Foobar
+description: Foobar
 author: https://github.com/uber-workflow
 configuration:
   properties:
-    compose-file:
+    thing:
       type: string
-    image:
-      type: string
-    package:
-      type: string
-    service:
-      type: string
-    build:
-      type: string
-    verbose:
-      type: boolean
-    logs:
-      type: boolean
-  required:
-    - image
-    - package
-    - service
-    - compose-file

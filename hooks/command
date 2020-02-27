@@ -1,12 +1,9 @@
 #!/bin/bash
+set -euo pipefail
 
-echo "Cloning specific branch"
+echo "--- Running ${BUILDKITE_COMMAND} in ${BUILDKITE_PLUGIN_FOOBAR_THING}"
 
-echo "HI $BUILDKITE_PLUGIN_ASDF_BRANCH"
-
-printenv | grep branch
-
-# GIT_BRANCH=${BUILDKITE_PLUGIN_ASDF_BRANCH:-test}
+# GIT_BRANCH="master"
 #
 # if [[ -d ".git" ]]; then
 #   if git remote get-url origin; then
