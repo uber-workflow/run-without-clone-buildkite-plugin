@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "Cloning specific branch"
-
 GIT_BRANCH=${BUILDKITE_PLUGIN_RUN_WITHOUT_CLONE_BRANCH:-master}
+
+echo "Cloning branch $GIT_BRANCH"
 
 if [[ -d ".git" ]]; then
   if git remote get-url origin; then
