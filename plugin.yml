@@ -3,5 +3,5 @@ description: run-without-clone
 author: https://github.com/uber-workflow
 configuration:
   properties:
-    thing:
+    branch:
       type: string

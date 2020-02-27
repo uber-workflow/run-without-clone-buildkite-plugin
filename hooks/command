@@ -1,23 +1,22 @@
 #!/bin/bash
-set -euo pipefail
 
-echo "--- Running ${BUILDKITE_COMMAND} in ${BUILDKITE_PLUGIN_RUN_WITHOUT_CLONE_THING}"
+echo "Cloning specific branch"
 
-# GIT_BRANCH="master"
-#
-# if [[ -d ".git" ]]; then
-#   if git remote get-url origin; then
-#     git remote set-url origin "$BUILDKITE_REPO"
-#   else
-#     git remote add origin "$BUILDKITE_REPO"
-#   fi;
-# else
-#   git clone "$BUILDKITE_REPO" .
-# fi;
-#
-# git clean -ffxdq
-#
-# git fetch -v --prune origin "$GIT_BRANCH"
-# git checkout -f FETCH_HEAD
-#
-# git clean -ffxdq
+GIT_BRANCH=${BUILDKITE_PLUGIN_RUN_WITHOUT_CLONE_BRANCH:-master}
+
+if [[ -d ".git" ]]; then
+  if git remote get-url origin; then
+    git remote set-url origin "$BUILDKITE_REPO"
+  else
+    git remote add origin "$BUILDKITE_REPO"
+  fi;
+else
+  git clone "$BUILDKITE_REPO" .
+fi;
+
+git clean -ffxdq
+
+git fetch -v --prune origin "$GIT_BRANCH"
+git checkout -f FETCH_HEAD
+
+git clean -ffxdq
